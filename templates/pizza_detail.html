@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block titel  %}
+    Пицца {{ pizza.name }}
+{% endblock titel %}
+
 {% block page  %}
     <a href="{% url 'index' %}" >Главня</a>
     <div>
@@ -10,4 +15,13 @@
         <div>{{ pizza.price|floatformat:"2" }}</div>
 
     </div>
+    <h2>Заказ</h2>
+    {% if sent %}
+        <h2>Спасибо, ваша заявка принята!</h2>
+    {% endif %}
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="Отправить заказ">
+    </form>
 {% endblock %}

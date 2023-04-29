@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pizzashop_app',
+    'telegram_bot_app',
 ]
 
 MIDDLEWARE = [

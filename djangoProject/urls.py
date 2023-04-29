@@ -26,4 +26,5 @@ from pizzashop_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pizza_shop_app/', include('pizzashop_app.urls'), name='home'),
+    path('telegram_bot_app/', include('telegram_bot_app.urls'), name='telegram-bot'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
